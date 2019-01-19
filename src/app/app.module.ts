@@ -8,7 +8,6 @@ import {TranslateModule, TranslateLoader, TranslateStaticLoader, TranslateServic
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { routes } from './routes/routes';
 import { ChartsModule } from 'ng2-charts';
-import { AceEditorModule } from 'ng2-ace-editor';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -32,7 +31,6 @@ export function createTranslateLoader(http: Http) {                 // 加载国
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot(),
     ChartsModule,
-    AceEditorModule,
     TranslateModule.forRoot({
       provide: TranslateLoader,
       useFactory: (createTranslateLoader),
