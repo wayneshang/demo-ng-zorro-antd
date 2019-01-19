@@ -79,13 +79,11 @@
 <nz-table
   #nzTable
   [nzScroll]="_fixHeader?{ y: 240 }:null"
-  [nzDataSource]="_dataSet"
+  [nzData]="_dataSet"
   [nzPageSize]="10"
   [nzBordered]="_bordered"
   [nzLoading]="_loading"
-  [nzIsPagination]="_pagination"
-  [nzShowFooter]="_footer"
-  [nzShowTitle]="_title"
+  [nzShowPagination]="_pagination"
   [nzSize]="_size">
   <span nz-table-title>{{'Title'|translate}}</span>
   <ng-template #nzFixedHeader [ngIf]="_header&&!_fixHeader">

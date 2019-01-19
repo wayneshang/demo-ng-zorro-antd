@@ -1,33 +1,31 @@
 <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="_submitForm()">
   <div nz-form-item>
-    <div nz-form-control [nzValidateStatus]="validateForm.controls.userName">
-      <nz-input formControlName="userName" [nzPlaceHolder]="'Username'" [nzSize]="'large'">
+    <nz-form-control [nzValidateStatus]="validateForm.controls.userName">
+      <input nz-input formControlName="userName" placeholder="Username" [nzSize]="'large'" />
         <ng-template #prefix>
           <i class="anticon anticon-user"></i>
         </ng-template>
-      </nz-input>
       <div nz-form-explain *ngIf="validateForm.controls.userName.dirty&&validateForm.controls.userName.hasError('required')">Please input your username!</div>
-    </div>
+    </nz-form-control>
   </div>
   <div nz-form-item>
-    <div nz-form-control [nzValidateStatus]="validateForm.controls.password">
-      <nz-input formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'Password'" [nzSize]="'large'">
+    <nz-form-control [nzValidateStatus]="validateForm.controls.password">
+      <input nz-input formControlName="password" type="password" placeholder="Password" [nzSize]="'large'" />
         <ng-template #prefix>
           <i class="anticon anticon-lock"></i>
         </ng-template>
-      </nz-input>
       <div nz-form-explain *ngIf="validateForm.controls.password.dirty&&validateForm.controls.password.hasError('required')">Please input your Password!</div>
-    </div>
+    </nz-form-control>
   </div>
   <div nz-form-item>
-    <div nz-form-control>
+    <nz-form-control>
       <label nz-checkbox formControlName="remember">
         <span>Remember me</span>
       </label>
       <!--<a class="login-form-forgot" class="login-form-forgot">Forgot password</a>-->
-      <button nz-button class="login-form-button" [nzType]="'primary'" [nzSize]="'large'">Log in</button>
+      <button nz-button class="login-form-button" type="primary" [nzSize]="'large'">Log in</button>
       <!--Or-->
       <!--<a href="">register now!</a>-->
-    </div>
+    </nz-form-control>
   </div>
 </form>

@@ -3,8 +3,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Http } from '@angular/http';
-import {TranslateModule, TranslateLoader, TranslateStaticLoader, TranslateService} from 'ng2-translate';
+import { HttpClient } from '@angular/common/http';
+import {TranslateModule, TranslateLoader, TranslateService} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { HttpClientModule } from '@angular/common/http';
+
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { routes } from './routes/routes';
 import { ChartsModule } from 'ng2-charts';
@@ -17,9 +20,11 @@ import { FormComponent } from './form/form.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { SpinComponent } from './spin/spin.component';
 import { EditorComponent } from './editor/editor.component';
+import { NzFormControlComponent, NzFormDirective, NzInputModule ,NzFormItemComponent} from 'ng-zorro-antd';
 
-export function createTranslateLoader(http: Http) {                 // 加载国际化指令文件解析路径
-  return new TranslateStaticLoader(http, './assets/i18n', '.json');
+
+export function createTranslateLoader(http: HttpClient) {                 // 加载国际化指令文件解析路径
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -29,13 +34,16 @@ export function createTranslateLoader(http: Http) {                 // 加载国
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    NgZorroAntdModule.forRoot(),
+    NgZorroAntdModule,
+    HttpClientModule,
     ChartsModule,
     TranslateModule.forRoot({
-      provide: TranslateLoader,
-      useFactory: (createTranslateLoader),
-      deps: [Http]
-    })// 根模块配置国际化
+      loader: {
+          provide: TranslateLoader,
+          useFactory: createTranslateLoader,
+          deps: [HttpClient]
+      }
+    })
   ],
   declarations: [
     AppComponent,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NzFormControlComponent, NzFormDirective, NzInputModule ,NzFormItemComponent} from 'ng-zorro-antd';
+import {FormControl, ReactiveFormsModule} from '@angular/forms';
 
 import {
   FormBuilder,

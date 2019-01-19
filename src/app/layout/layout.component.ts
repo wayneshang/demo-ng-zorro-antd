@@ -2,7 +2,7 @@ import { Component, OnInit  } from '@angular/core';
 import { Router, NavigationEnd, RouteConfigLoadStart } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd';
 import {Http} from '@angular/http';
-import {TranslateService, LangChangeEvent} from 'ng2-translate';
+import {TranslateService, LangChangeEvent} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-layout',
@@ -26,7 +26,7 @@ export class LayoutComponent implements OnInit {
     'text': 'Users',
     'translate': '用户',
     'link': '/users',
-    'icon': 'anticon-user',
+    'icon': 'outline',
     'selected': false
   },
   {

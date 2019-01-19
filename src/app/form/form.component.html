@@ -5,29 +5,29 @@
     <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
       <label for="email" nz-form-item-required>E-mail</label>
     </div>
-    <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback [nzValidateStatus]="getFormControl('email')">
-      <nz-input [nzSize]="'large'" formControlName="email" [nzId]="'email'"></nz-input>
+    <nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback [nzValidateStatus]="getFormControl('email')">
+      <input nz-input [nzSize]="'large'" formControlName="email" id="email" />
       <div nz-form-explain *ngIf="getFormControl('email').dirty&&getFormControl('email').hasError('email')">The input is not valid E-mail!</div>
-    </div>
+    </nz-form-control>
   </div>
   <div nz-form-item nz-row>
     <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
       <label for="password" nz-form-item-required>Password</label>
     </div>
-    <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback [nzValidateStatus]="getFormControl('password')">
-      <nz-input [nzSize]="'large'" formControlName="password" [nzType]="'password'" [nzId]="'password'" (ngModelChange)="updateConfirmValidator()"></nz-input>
+    <nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback [nzValidateStatus]="getFormControl('password')">
+      <input nz-input [nzSize]="'large'" formControlName="password" type="password" id="password" (ngModelChange)="updateConfirmValidator()" />
       <div nz-form-explain *ngIf="getFormControl('password').dirty&&getFormControl('password').hasError('required')">Please input your password!</div>
-    </div>
+    </nz-form-control>
   </div>
   <div nz-form-item nz-row>
     <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
       <label for="checkPassword" nz-form-item-required>Confirm Password</label>
     </div>
-    <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback [nzValidateStatus]="getFormControl('checkPassword')">
-      <nz-input [nzSize]="'large'" formControlName="checkPassword" [nzType]="'password'" [nzId]="'checkPassword'"></nz-input>
+    <nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback [nzValidateStatus]="getFormControl('checkPassword')">
+      <input nz-input [nzSize]="'large'" formControlName="checkPassword" type="password" id="checkPassword" />
       <div nz-form-explain *ngIf="getFormControl('checkPassword').dirty&&getFormControl('checkPassword').hasError('required')">Please confirm your password!</div>
       <div nz-form-explain *ngIf="getFormControl('checkPassword').dirty&&getFormControl('checkPassword').hasError('confirm')">Two passwords that you enter is inconsistent!</div>
-    </div>
+    </nz-form-control>
   </div>
   <div nz-form-item nz-row>
     <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
@@ -40,16 +40,16 @@
             </span>
       </label>
     </div>
-    <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback [nzValidateStatus]="getFormControl('nickname')">
-      <nz-input [nzSize]="'large'" formControlName="nickname" [nzId]="'nickname'"></nz-input>
+    <nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback [nzValidateStatus]="getFormControl('nickname')">
+      <input nz-input [nzSize]="'large'" formControlName="nickname" id="nickname" />
       <div nz-form-explain *ngIf="getFormControl('nickname').dirty&&getFormControl('nickname').hasError('required')">Please input your nickname!</div>
-    </div>
+    </nz-form-control>
   </div>
   <div nz-form-item nz-row>
     <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
       <label for="phoneNumber" nz-form-item-required>Phone Number</label>
     </div>
-    <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback [nzValidateStatus]="getFormControl('phoneNumber')">
+    <nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback [nzValidateStatus]="getFormControl('phoneNumber')">
       <nz-input-group [nzSize]="'large'" [nzCompact]="true">
         <nz-select formControlName="phoneNumberPrefix" style="width: 25%;">
           <nz-option [nzLabel]="'+86'" [nzValue]="'+86'"></nz-option>
@@ -58,25 +58,25 @@
         <input formControlName="phoneNumber" id="'phoneNumber'" nz-input style="width: 75%;">
       </nz-input-group>
       <div nz-form-explain *ngIf="getFormControl('phoneNumber').dirty&&getFormControl('phoneNumber').hasError('required')">Please input your phone number!</div>
-    </div>
+    </nz-form-control>
   </div>
   <div nz-form-item nz-row>
     <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
       <label for="website" nz-form-item-required>Website</label>
     </div>
-    <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback [nzValidateStatus]="getFormControl('website')">
-      <nz-input [nzSize]="'large'" formControlName="website" [nzId]="'website'"></nz-input>
+    <nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback [nzValidateStatus]="getFormControl('website')">
+      <input nz-input [nzSize]="'large'" formControlName="website" id="website" />
       <div nz-form-explain *ngIf="getFormControl('website').dirty&&getFormControl('website').hasError('required')">Please input website!</div>
-    </div>
+    </nz-form-control>
   </div>
   <div nz-form-item nz-row>
     <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
       <label for="captcha" nz-form-item-required>Captcha</label>
     </div>
-    <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" [nzValidateStatus]="getFormControl('captcha')">
+    <nz-form-control nz-col [nzSm]="14" [nzXs]="24" [nzValidateStatus]="getFormControl('captcha')">
       <div nz-row [nzGutter]="8">
         <div nz-col [nzSpan]="12">
-          <nz-input [nzSize]="'large'" formControlName="captcha" [nzId]="'captcha'"></nz-input>
+          <input nz-input [nzSize]="'large'" formControlName="captcha" id="captcha" />
         </div>
         <div nz-col [nzSpan]="12">
           <button nz-button [nzSize]="'large'" (click)="getCaptcha($event)">Get captcha</button>
@@ -84,7 +84,7 @@
       </div>
       <div nz-form-extra>We must make sure that your are a human.</div>
       <div nz-form-explain *ngIf="getFormControl('captcha').dirty&&getFormControl('captcha').hasError('required')">Please input the captcha you got!</div>
-    </div>
+    </nz-form-control>
   </div>
   <div nz-form-item nz-row style="margin-bottom:8px;">
     <div nz-form-control nz-col [nzSpan]="14" [nzOffset]="6">
@@ -95,70 +95,64 @@
   </div>
   <div nz-form-item nz-row style="margin-bottom:8px;">
     <div nz-form-control nz-col [nzSpan]="14" [nzOffset]="6">
-      <button nz-button [nzSize]="'large'" [nzType]="'primary'">Register</button>
+      <button nz-button [nzSize]="'large'" type="primary">Register</button>
     </div>
   </div>
 </form>
   </div>
   <div nz-col [nzSpan]="12">
-    <form nz-form [nzType]="'horizontal'">
+    <form nz-form [nzLayout]="'horizontal'">
       <div nz-form-item nz-row>
         <div nz-form-label nz-col [nzSpan]="5">
           <label>Fail</label>
         </div>
-        <div nz-form-control [nzValidateStatus]="'error'" nz-col [nzSpan]="12">
-          <nz-input [ngModel]="'unavailable choice'" [nzSize]="'large'" name="errorValid">
-          </nz-input>
+        <nz-form-control [nzValidateStatus]="'error'" nz-col [nzSpan]="12">
+          <input nz-input [ngModel]="'unavailable choice'" [nzSize]="'large'" name="errorValid" />
           <div nz-form-explain>Should be combination of numbers & alphabets</div>
-        </div>
+        </nz-form-control>
       </div>
       <div nz-form-item nz-row>
         <div nz-form-label nz-col [nzSpan]="5">
           <label>Warning</label>
         </div>
-        <div nz-form-control [nzValidateStatus]="'warning'" nz-col [nzSpan]="12">
-          <nz-input [ngModel]="'Warning'" [nzSize]="'large'" name="warningValid">
-          </nz-input>
-        </div>
+        <nz-form-control [nzValidateStatus]="'warning'" nz-col [nzSpan]="12">
+          <input nz-input [ngModel]="'Warning'" [nzSize]="'large'" name="warningValid" />
+        </nz-form-control>
       </div>
       <div nz-form-item nz-row>
         <div nz-form-label nz-col [nzSpan]="5">
           <label>Validating</label>
         </div>
-        <div nz-col [nzSpan]="12" nz-form-control [nzValidateStatus]="'validating'" nzHasFeedback>
-          <nz-input [ngModel]="'The content is being validating'" [nzSize]="'large'" name="validating">
-          </nz-input>
+        <nz-form-control [nzSpan]="12" [nzValidateStatus]="'validating'" nzHasFeedback>
+          <input nz-input [ngModel]="'The content is being validating'" [nzSize]="'large'" name="validating" />
           <div nz-form-explain>I'm the content is being validating</div>
-        </div>
+        </nz-form-control>
       </div>
       <div nz-form-item nz-row>
         <div nz-form-label nz-col [nzSpan]="5">
           <label>Success</label>
         </div>
-        <div nz-form-control nz-col [nzSpan]="12" [nzValidateStatus]="'success'" nzHasFeedback>
-          <nz-input [ngModel]="'The content'" [nzSize]="'large'" name="successValid">
-          </nz-input>
-        </div>
+        <nz-form-control nz-col [nzSpan]="12" [nzValidateStatus]="'success'" nzHasFeedback>
+          <input nz-input [ngModel]="'The content'" [nzSize]="'large'" name="successValid" />
+        </nz-form-control>
       </div>
       <div nz-form-item nz-row>
         <div nz-form-label nz-col [nzSpan]="5">
           <label>Warning</label>
         </div>
-        <div nz-col [nzSpan]="12" nz-form-control [nzValidateStatus]="'warning'" nzHasFeedback>
-          <nz-input [ngModel]="'Warning'" [nzSize]="'large'" name="warningHighValid">
-          </nz-input>
+        <nz-form-control nz-col [nzSpan]="12" [nzValidateStatus]="'warning'" nzHasFeedback>
+          <input nz-input [ngModel]="'Warning'" [nzSize]="'large'" name="warningHighValid" />
           <div nz-form-explain>Should be combination of numbers & alphabets</div>
-        </div>
+        </nz-form-control>
       </div>
       <div nz-form-item nz-row>
         <div nz-form-label nz-col [nzSpan]="5">
           <label>Fail</label>
         </div>
-        <div nz-col [nzSpan]="12" nz-form-control [nzValidateStatus]="'error'" nzHasFeedback>
-          <nz-input [ngModel]="'unavailable choice'" [nzSize]="'large'" name="invalidValid">
-          </nz-input>
+        <nz-form-control nz-col [nzSpan]="12" [nzValidateStatus]="'error'" nzHasFeedback>
+          <input nz-input [ngModel]="'unavailable choice'" [nzSize]="'large'" name="invalidValid" />
           <div nz-form-explain>Should be combination of numbers & alphabets</div>
-        </div>
+        </nz-form-control>
       </div>
       <div nz-form-item nz-row>
         <div nz-form-label nz-col [nzSpan]="5">
@@ -169,11 +163,11 @@
             <div nz-col [nzSpan]="6">
               <div nz-form-item nz-row>
                 <div>
-                  <div nz-form-control [nzValidateStatus]="'error'">
-                    <nz-datepicker [nzSize]="'large'" [nzPlaceHolder]="'Select date'"></nz-datepicker>
+                  <nz-form-control [nzValidateStatus]="'error'">
+                    <nz-date-picker [nzSize]="'large'" [nzPlaceHolder]="'Select date'"></nz-date-picker>
                     <div nz-form-explain>Select date</div>
                     <div nz-form-explain>Please select the correct date</div>
-                  </div>
+                  </nz-form-control>
                 </div>
               </div>
             </div>
@@ -184,7 +178,7 @@
               <div nz-form-item nz-row>
                 <div>
                   <div nz-form-control>
-                    <nz-datepicker [nzSize]="'large'" [nzPlaceHolder]="'Select date'"></nz-datepicker>
+                    <nz-date-picker [nzSize]="'large'" [nzPlaceHolder]="'Select date'"></nz-date-picker>
                   </div>
                 </div>
               </div>
